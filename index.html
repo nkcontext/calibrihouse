@@ -6,14 +6,13 @@
     <title>12309 Calibri Ln, Austin, TX 78753 | calibrihouse</title>
     <meta
       name="description"
-      content="5 bd · 3 ba · 2,662 sqft home for rent in Tech Ridge, Austin, TX. $2,750/mo. Move-in May 1 – Jun 15, 2026."
+      content="5 bd · 3 ba · 2,662 sqft home for rent in Tech Ridge, Austin, TX. $2,750/mo. Available as soon as May 25, 2026 (flexible timing)."
     />
-    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
@@ -21,41 +20,20 @@
     <!-- Top nav -->
     <header class="topnav">
       <div class="topnav-inner">
-        <a href="#" class="brand" aria-label="Zillow">
-          <svg viewBox="0 0 80 32" class="brand-logo" aria-hidden="true">
-            <path
-              fill="#ffffff"
-              d="M40 4 L8 22 L8 28 L20 28 L20 22 L34 22 L34 28 L46 28 L46 22 L60 22 L60 28 L72 28 L72 22 L40 4 Z"
-            />
-          </svg>
-          <span class="brand-text">Zillow</span>
-        </a>
-        <nav class="topnav-links" aria-label="Primary">
-          <a href="#">Buy</a>
-          <a href="#" class="active">Rent</a>
-          <a href="#">Sell</a>
-          <a href="#">Home Loans</a>
-          <a href="#">Agent finder</a>
-        </nav>
-        <div class="topnav-actions">
-          <a href="#" class="link">Manage Rentals</a>
-          <a href="#" class="link">Advertise</a>
-          <a href="#" class="link">Help</a>
-          <a href="#" class="link">Sign In</a>
-        </div>
+        <span class="brand">Calibri House</span>
       </div>
     </header>
 
     <!-- Breadcrumb -->
     <div class="breadcrumb">
       <div class="container">
-        <a href="#">Texas</a>
+        <span>Texas</span>
         <span>›</span>
-        <a href="#">Travis County</a>
+        <span>Travis County</span>
         <span>›</span>
-        <a href="#">Austin</a>
+        <span>Austin</span>
         <span>›</span>
-        <a href="#">78753</a>
+        <span>78753</span>
         <span>›</span>
         <span class="current">12309 Calibri Ln</span>
       </div>
@@ -103,20 +81,6 @@
               </div>
               <div class="address-line">12309 Calibri Ln, Austin, TX 78753</div>
             </div>
-            <div class="action-buttons">
-              <button class="btn-icon" type="button" aria-label="Save">
-                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 21s-7-4.5-9.5-9C.5 8 3 4 7 4c2 0 3.5 1 5 3 1.5-2 3-3 5-3 4 0 6.5 4 4.5 8C19 16.5 12 21 12 21z"/></svg>
-                Save
-              </button>
-              <button class="btn-icon" type="button" aria-label="Share">
-                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M18 16a3 3 0 0 0-2.4 1.2l-7-4a3 3 0 0 0 0-2.4l7-4a3 3 0 1 0-1-1.7l-7 4a3 3 0 1 0 0 5.8l7 4a3 3 0 1 0 3.4-2.9z"/></svg>
-                Share
-              </button>
-              <button class="btn-icon" type="button" aria-label="More">
-                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M6 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm8 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm8 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></svg>
-                More
-              </button>
-            </div>
           </div>
           <div class="key-facts">
             <div><strong>5</strong> bd</div>
@@ -126,7 +90,7 @@
             <div><strong>2,662</strong> sqft</div>
           </div>
           <div class="status-pill">
-            <span class="dot-green"></span> For rent · Available May 1 – Jun 15, 2026
+            <span class="dot-green"></span> For rent · Available as soon as May 25, 2026 (flexible timing)
           </div>
         </section>
 
@@ -212,22 +176,13 @@
               <ul>
                 <li>$2,750 / month</li>
                 <li>1-year minimum lease</li>
-                <li>Move-in May 1 – Jun 15, 2026</li>
+                <li>Available as soon as May 25, 2026 (flexible)</li>
                 <li>Pets welcome (with prior info)</li>
                 <li>Non-smoking property</li>
                 <li>Renter pays utilities &amp; wifi</li>
               </ul>
             </div>
           </div>
-        </section>
-
-        <!-- Map -->
-        <section class="card" id="location">
-          <h2>Location</h2>
-          <div id="map" class="map" aria-label="Property location map"></div>
-          <p class="map-caption">
-            12309 Calibri Ln, Austin, TX 78753 · Tech Ridge neighborhood
-          </p>
         </section>
 
         <!-- Neighborhood -->
@@ -258,6 +213,142 @@
               <h3>Commute</h3>
               <p>10 min to the Domain · 18 min to downtown Austin.</p>
             </div>
+          </div>
+        </section>
+
+        <!-- What Fits Inside / Floor Plan -->
+        <section class="card" id="what-fits">
+          <h2>What fits inside</h2>
+          <p class="lede">
+            5 bedrooms is unusual for this area — and surprisingly versatile.
+            Here are three ways tenants have configured this house.
+          </p>
+
+          <div class="scenarios">
+            <div class="scenario-tabs" role="tablist" aria-label="Scenarios">
+              <button
+                class="scenario-tab active"
+                role="tab"
+                aria-selected="true"
+                data-scenario="dual"
+              >
+                Dual-Career Couple
+              </button>
+              <button
+                class="scenario-tab"
+                role="tab"
+                aria-selected="false"
+                data-scenario="family"
+              >
+                Family of 4
+              </button>
+              <button
+                class="scenario-tab"
+                role="tab"
+                aria-selected="false"
+                data-scenario="multigen"
+              >
+                Multigen Home
+              </button>
+            </div>
+
+            <!-- Dual-Career Couple -->
+            <div class="scenario-panel active" data-panel="dual" role="tabpanel">
+              <p class="scenario-summary">
+                Master suite + 2 dedicated offices + guest room + home gym. Both
+                of you can take video calls without overhearing each other.
+              </p>
+              <div class="rooms-grid">
+                <div class="room room-master">
+                  <span class="room-label">Master Suite</span>
+                  <span class="room-sub">King bed · walk-in closet · ensuite</span>
+                </div>
+                <div class="room">
+                  <span class="room-label">Office A</span>
+                  <span class="room-sub">Partner 1 · video-call ready</span>
+                </div>
+                <div class="room">
+                  <span class="room-label">Office B</span>
+                  <span class="room-sub">Partner 2 · across the house</span>
+                </div>
+                <div class="room">
+                  <span class="room-label">Guest Room</span>
+                  <span class="room-sub">Visitors · in-laws · weekenders</span>
+                </div>
+                <div class="room">
+                  <span class="room-label">Home Gym</span>
+                  <span class="room-sub">Peloton · weights · yoga space</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Family of 4 -->
+            <div class="scenario-panel" data-panel="family" role="tabpanel" hidden>
+              <p class="scenario-summary">
+                Master + 2 kids' rooms + an office + a flex playroom. Open
+                kitchen means cooking dinner while kids do homework on the
+                counter.
+              </p>
+              <div class="rooms-grid">
+                <div class="room room-master">
+                  <span class="room-label">Master Suite</span>
+                  <span class="room-sub">Parents · large walk-in closet</span>
+                </div>
+                <div class="room">
+                  <span class="room-label">Kid's Room 1</span>
+                  <span class="room-sub">Natural light · closet</span>
+                </div>
+                <div class="room">
+                  <span class="room-label">Kid's Room 2</span>
+                  <span class="room-sub">Down the hall</span>
+                </div>
+                <div class="room">
+                  <span class="room-label">Office</span>
+                  <span class="room-sub">WFH · away from kids</span>
+                </div>
+                <div class="room">
+                  <span class="room-label">Playroom</span>
+                  <span class="room-sub">Toys · homework · crafts</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Multigen Home -->
+            <div class="scenario-panel" data-panel="multigen" role="tabpanel" hidden>
+              <p class="scenario-summary">
+                Master + in-law suite + 2 bedrooms + an office. The downstairs
+                living room becomes a second family room, so everyone has space
+                to retreat.
+              </p>
+              <div class="rooms-grid">
+                <div class="room room-master">
+                  <span class="room-label">Master Suite</span>
+                  <span class="room-sub">Owners · privacy from main living</span>
+                </div>
+                <div class="room">
+                  <span class="room-label">In-Law Suite</span>
+                  <span class="room-sub">Grandparent / extended family</span>
+                </div>
+                <div class="room">
+                  <span class="room-label">Bedroom 3</span>
+                  <span class="room-sub">Family member · upstairs</span>
+                </div>
+                <div class="room">
+                  <span class="room-label">Bedroom 4</span>
+                  <span class="room-sub">Family member · upstairs</span>
+                </div>
+                <div class="room">
+                  <span class="room-label">Office</span>
+                  <span class="room-sub">Shared workspace</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="floorplan-callout">
+            <strong>Two living rooms.</strong> Whichever scenario you pick, the
+            upstairs and downstairs living rooms let households actually
+            decompress separately — kids' show in one, your show in the other.
           </div>
         </section>
 
@@ -294,6 +385,36 @@
           </ul>
         </section>
 
+        <!-- Life at Calibri -->
+        <section class="card story-card">
+          <h2>Life at Calibri</h2>
+          <div class="story">
+            <p>
+              <strong>Mornings start in the kitchen.</strong> The open layout
+              means you can pour coffee, scramble eggs, and chat across the
+              counter while someone else is on the couch reading the news. The
+              east-facing windows in the living rooms light the whole downstairs
+              by 8am.
+            </p>
+            <p>
+              <strong>Walks at Copperfield.</strong> Two minutes out the front
+              door and you're at the park — long enough to clear your head
+              between meetings, short enough that the dog doesn't get used to a
+              real outing.
+            </p>
+            <p>
+              <strong>Weeknight dinners with friends.</strong> Five bedrooms
+              means you've got room to host without juggling. Wine on the patio,
+              the grill going, kids running between living rooms.
+            </p>
+            <p>
+              <strong>Domain weekends.</strong> Ten minutes to dinner reservations,
+              shopping, the movies. You're close enough to drop in spontaneously
+              and far enough to come home to quiet.
+            </p>
+          </div>
+        </section>
+
         <section class="card">
           <h2>Pets, parking &amp; more</h2>
           <ul class="bullet-list">
@@ -303,6 +424,56 @@
             <li><strong>Smoking:</strong> non-smoking property.</li>
             <li><strong>Agents:</strong> standard commission policies honored.</li>
           </ul>
+        </section>
+
+        <!-- How to apply -->
+        <section class="card" id="how-to-apply">
+          <h2>How to apply</h2>
+          <p class="lede">
+            Four steps from interest to keys. We move fast for great tenants.
+          </p>
+          <ol class="apply-steps">
+            <li>
+              <span class="step-num">1</span>
+              <div class="step-body">
+                <h3>Schedule a Zoom intro</h3>
+                <p>
+                  A 15-minute call with Neha, the property manager, to answer
+                  any questions about the house.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num">2</span>
+              <div class="step-body">
+                <h3>Tour the house in person</h3>
+                <p>
+                  See it for yourself — bring your partner, your parents, or
+                  your dog.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num">3</span>
+              <div class="step-body">
+                <h3>Submit application</h3>
+                <p>
+                  Each adult on the lease submits proof of income, ID, and
+                  consent to a credit &amp; background check.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="step-num">4</span>
+              <div class="step-body">
+                <h3>Sign lease &amp; move in</h3>
+                <p>
+                  Sign, pay first month's rent &amp; deposit, pick up keys.
+                  Available as soon as May 25, 2026 (flexible timing).
+                </p>
+              </div>
+            </li>
+          </ol>
         </section>
       </article>
 
@@ -316,15 +487,12 @@
               <div class="agent-name">Neha</div>
             </div>
           </div>
-          <a class="btn btn-primary" href="mailto:neha@example.com?subject=12309%20Calibri%20Ln%20%E2%80%94%20Tour%20request">
+          <a class="btn btn-primary" href="mailto:calibrihouse@nkay.33mail.com?subject=12309%20Calibri%20Ln%20%E2%80%94%20Tour%20request&amp;body=Hi%20Neha%2C%0A%0AI%27d%20like%20to%20schedule%20a%20tour%20of%2012309%20Calibri%20Ln.%0A%0AA%20few%20details%20about%20me%3A%0A-%20Name%3A%20%0A-%20Move-in%20timing%3A%20%0A-%20Household%20size%3A%20%0A-%20Best%20times%20to%20tour%3A%20%0A%0AThanks%21">
             Request a tour
           </a>
-          <button class="btn btn-secondary" type="button" id="open-contact">
-            Contact property manager
-          </button>
           <div class="trust-line">
             <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5l-8-3z"/></svg>
-            Verified owner-managed listing
+            Verified listing
           </div>
         </div>
       </aside>
@@ -357,7 +525,7 @@
         <button class="modal-close" id="contact-close" aria-label="Close">×</button>
         <h2>Contact property manager</h2>
         <p class="muted">Send a quick message about 12309 Calibri Ln.</p>
-        <form id="contact-form" method="post" action="mailto:neha@example.com" enctype="text/plain">
+        <form id="contact-form" method="post" action="mailto:calibrihouse@nkay.33mail.com" enctype="text/plain">
           <label>
             Name
             <input type="text" name="name" required />
@@ -383,12 +551,6 @@
       </div>
     </div>
 
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-      defer
-    ></script>
     <script src="./app.js" defer></script>
   </body>
 </html>
