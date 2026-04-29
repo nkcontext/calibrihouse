@@ -2,3 +2,7 @@
 node_modules/
 .vscode/
 .idea/
+
+# Source assets — not needed at runtime, kept locally only.
+Calibri Tech Ridge.pdf
+Zillow Photos Post on FB/
