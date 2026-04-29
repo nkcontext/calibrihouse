@@ -1,4 +1,4 @@
-# websitecalibri
+# calibrihouse
 
 A minimal static site hosted on GitHub Pages.
 
