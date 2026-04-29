@@ -1,4 +1,4 @@
-// 12309 Calibri Ln listing — gallery lightbox, contact modal, Leaflet map.
+// 12309 Calibri Ln (v2) — gallery lightbox, scenario tabs, modals, Leaflet map.
 
 const TOTAL_PHOTOS = 32;
 
@@ -26,7 +26,6 @@ function showPhoto(idx) {
   lbImg.alt = `Photo ${idx + 1} of ${TOTAL_PHOTOS}`;
   lbCaption.textContent = `${idx + 1} / ${TOTAL_PHOTOS}`;
 
-  // Preload neighbours for snappier nav.
   [idx - 1, idx + 1].forEach((i) => {
     if (i >= 0 && i < TOTAL_PHOTOS) {
       const pre = new Image();
@@ -51,34 +50,73 @@ document.getElementById("lb-prev").addEventListener("click", () => navPhoto(-1))
 document.getElementById("lb-next").addEventListener("click", () => navPhoto(1));
 
 document.addEventListener("keydown", (e) => {
-  if (lightbox.hidden) return;
-  if (e.key === "Escape") closeLightbox();
-  else if (e.key === "ArrowLeft") navPhoto(-1);
-  else if (e.key === "ArrowRight") navPhoto(1);
+  if (!lightbox.hidden) {
+    if (e.key === "Escape") closeLightbox();
+    else if (e.key === "ArrowLeft") navPhoto(-1);
+    else if (e.key === "ArrowRight") navPhoto(1);
+    return;
+  }
+  if (e.key === "Escape") closeAllModals();
 });
 
 lightbox.addEventListener("click", (e) => {
   if (e.target === lightbox) closeLightbox();
 });
 
-// ---------- Contact modal ----------
+// ---------- Modals (contact + apply) ----------
 const contactModal = document.getElementById("contact-modal");
-const openContactBtn = document.getElementById("open-contact");
-const closeContactBtn = document.getElementById("contact-close");
+const applyModal = document.getElementById("apply-modal");
 
-openContactBtn?.addEventListener("click", () => {
-  contactModal.hidden = false;
-});
-closeContactBtn?.addEventListener("click", () => {
-  contactModal.hidden = true;
-});
+function openModal(modal) {
+  if (!modal) return;
+  modal.hidden = false;
+  document.body.style.overflow = "hidden";
+}
+function closeModal(modal) {
+  if (!modal) return;
+  modal.hidden = true;
+  document.body.style.overflow = "";
+}
+function closeAllModals() {
+  closeModal(contactModal);
+  closeModal(applyModal);
+}
+
+document.getElementById("open-contact")?.addEventListener("click", () => openModal(contactModal));
+document.getElementById("contact-close")?.addEventListener("click", () => closeModal(contactModal));
 contactModal?.addEventListener("click", (e) => {
-  if (e.target === contactModal) contactModal.hidden = true;
+  if (e.target === contactModal) closeModal(contactModal);
+});
+
+const openApplyHandler = () => openModal(applyModal);
+document.getElementById("open-apply")?.addEventListener("click", openApplyHandler);
+document.getElementById("open-apply-2")?.addEventListener("click", openApplyHandler);
+document.getElementById("apply-close")?.addEventListener("click", () => closeModal(applyModal));
+applyModal?.addEventListener("click", (e) => {
+  if (e.target === applyModal) closeModal(applyModal);
+});
+
+// ---------- Scenario tabs ("What fits inside") ----------
+const tabs = document.querySelectorAll(".scenario-tab");
+const panels = document.querySelectorAll(".scenario-panel");
+
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const target = tab.getAttribute("data-scenario");
+    tabs.forEach((t) => {
+      const active = t === tab;
+      t.classList.toggle("active", active);
+      t.setAttribute("aria-selected", active ? "true" : "false");
+    });
+    panels.forEach((panel) => {
+      const match = panel.getAttribute("data-panel") === target;
+      panel.classList.toggle("active", match);
+      panel.hidden = !match;
+    });
+  });
 });
 
 // ---------- Leaflet map ----------
-// 12309 Calibri Ln, Austin, TX 78753 — approximate coordinates for the
-// Tech Ridge neighborhood. Used as a visual reference, not navigation.
 function initMap() {
   if (typeof L === "undefined") return;
   const propertyCoords = [30.4015, -97.6655];
@@ -86,7 +124,7 @@ function initMap() {
   const map = L.map("map", {
     scrollWheelZoom: false,
     zoomControl: true,
-  }).setView(propertyCoords, 14);
+  }).setView(propertyCoords, 13);
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
@@ -104,11 +142,12 @@ function initMap() {
     .addTo(map)
     .bindPopup("<strong>12309 Calibri Ln</strong><br>5 bd · 3 ba · 2,662 sqft");
 
-  // Reference pins — approximate
   const refs = [
-    { coords: [30.4015, -97.7252], label: "The Domain", color: "#1f7a4d" },
-    { coords: [30.3965, -97.6710], label: "HEB", color: "#cf2b2b" },
-    { coords: [30.4046, -97.6655], label: "Copperfield Park", color: "#3b6e22" },
+    { coords: [30.4015, -97.7252], label: "Domain · 10", color: "#1f7a4d" },
+    { coords: [30.4400, -97.7150], label: "Apple Parmer · 9", color: "#5b27a8" },
+    { coords: [30.3965, -97.6710], label: "HEB · 5", color: "#cf2b2b" },
+    { coords: [30.4046, -97.6655], label: "Copperfield Park · 2", color: "#3b6e22" },
+    { coords: [30.2672, -97.7431], label: "Downtown · 18", color: "#0c1b33" },
   ];
 
   refs.forEach((r) => {
