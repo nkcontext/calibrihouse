@@ -385,17 +385,6 @@ h3 { font-size: 0.95rem; margin: 0 0 0.5rem; }
   .room-master { grid-column: 1 / 3; grid-row: 1; }
 }
 
-.floorplan-callout {
-  margin-top: 20px;
-  padding: 14px 16px;
-  background: var(--warm);
-  border-left: 3px solid #f0a020;
-  border-radius: 6px;
-  font-size: 0.92rem;
-  color: var(--text);
-}
-.floorplan-callout strong { color: var(--ink); }
-
 /* ---------- Life at Calibri / Story ---------- */
 .story-card { background: linear-gradient(180deg, #ffffff, #fafbfd); }
 .story p {
@@ -424,6 +413,15 @@ h3 { font-size: 0.95rem; margin: 0 0 0.5rem; }
   width: auto;
   padding: 10px 20px;
 }
+.verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.verified-badge svg { color: var(--green); }
 
 /* Map */
 .map {
